@@ -8,7 +8,7 @@ router.route({
   path: '/trees',
   validate: {
     query: {
-      page: Joi.number().integer().required()
+      page: Joi.number().integer().min(1).required()
     }
   },
   handler: trees.list
