@@ -5,14 +5,15 @@ const request = require('supertest').agent(app.listen())
 require('should')
 
 describe('Tree', function () {
-  describe('GET /trees', function () {
+  describe('GET /trees?page=1', function () {
     it('should see a list of trees', function (done) {
       request
-        .get('/trees')
+        .get('/trees?page=1')
         .expect(200, function (err, res) {
           if (err) return done(err)
           res.body.should.be.json
-          res.body.should.be.instanceof(Array)
+          res.body.total.should.be.Number
+          res.body.data.should.be.instanceof(Array)
           done()
         })
     })
