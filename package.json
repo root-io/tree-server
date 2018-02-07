@@ -1,0 +1,28 @@
+{
+  "name": "tree-server",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@koa/cors": "2.2.1",
+    "forest-express-mongoose": "2.2.0",
+    "koa": "2.4.1",
+    "koa-connect": "git+https://github.com/cyrilluce/koa2-connect.git",
+    "koa-joi-router": "5.1.0",
+    "koa-logger": "3.1.0",
+    "koa-router": "7.4.0",
+    "mongoose": "5.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "should": "^13.1.2",
+    "supertest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=7.6 <9"
+  }
+}
