@@ -12,7 +12,7 @@ describe('Tree', function () {
         .expect(200, function (err, res) {
           if (err) return done(err)
           res.body.should.be.json
-          // res.body.should.have.property('trees', '')
+          res.body.should.be.instanceof(Array)
           done()
         })
     })
