@@ -2,6 +2,9 @@ const Tree = require('../models/tree')
 
 exports.list = async (ctx, next) => {
   try {
+    const page = ctx.request.query.page
+    const perPage = 3
+    const start = (page - 1) * perPage
     // ctx.body = [
     //   { specie: "Acacia" },
     //   { specie: "Baobab" },
@@ -15,7 +18,9 @@ exports.list = async (ctx, next) => {
     //   { specie: "Maple" },
     //   { specie: "Elm" }
     // ]
-    ctx.body = await Tree.find()
+    const total = await Tree.count()
+    const trees = await Tree.find().limit(perPage).skip(start)
+    ctx.body = { total: total, data: trees }
   } catch (err) {
     console.error(err)
     ctx.throw(500)
