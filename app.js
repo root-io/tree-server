@@ -1,5 +1,4 @@
 const logger = require('koa-logger')
-const { encodeMongoURI } = require('./utils/mongo')
 const cors = require('@koa/cors')
 const mongoose = require('mongoose')
 const treeRoutes = require('./routes/trees')
@@ -8,6 +7,7 @@ const path = require('path')
 
 const connect = () => {
   mongoose.connect(encodeMongoURI('mongodb://localhost/tree'))
+  mongoose.connect('mongodb://localhost/tree')
     .catch(console.error)
 }
 connect()
