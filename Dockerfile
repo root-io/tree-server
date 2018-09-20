@@ -1,12 +1,6 @@
-FROM alpine:3.7
+FROM node:carbon-alpine
 
 MAINTAINER David Routhieau "rootio@protonmail.com"
-
-RUN apk add --no-cache \
-      build-base \
-      git \
-      nodejs \
-      nodejs-npm
 
 RUN mkdir -p /srv/tree-server
 
