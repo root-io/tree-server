@@ -6,7 +6,6 @@ const c2k = require('koa-connect')
 const path = require('path')
 
 const connect = () => {
-  mongoose.connect(encodeMongoURI('mongodb://localhost/tree'))
   mongoose.connect('mongodb://localhost/tree')
     .catch(console.error)
 }
